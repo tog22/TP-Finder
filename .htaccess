@@ -1,0 +1,34 @@
+###############
+# Use PHP 7.1 #
+###############
+
+AddHandler application/x-httpd-php71 .php
+<IfModule mod_suphp.c>
+    suPHP_ConfigPath /opt/php71/lib
+</IfModule>
+
+
+############
+# Rewrites #
+############
+
+# Internal redirect to Slim's front controller in public/
+#
+# (I got this code from https://odan.github.io/2017/11/30/creating-your-first-slim-framework-application.html#directory-structure )
+
+RewriteEngine on
+RewriteRule ^$ public/ [L]
+RewriteRule (.*) public/$1 [L]
+
+# These came from HostGator
+
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/cpanel-dcv/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/(?:\ Ballot169)?
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/cpanel-dcv/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/(?:\ Ballot169)?
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+
+##

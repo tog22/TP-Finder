@@ -1,0 +1,15 @@
+[26-Mar-2020 19:54:02 America/Chicago] PHP Warning:  require(vendor/autoload.php): failed to open stream: No such file or directory in /home3/tog22/all-sites/tp-finder/public/index.php on line 2
+[26-Mar-2020 19:54:02 America/Chicago] PHP Warning:  require(vendor/autoload.php): failed to open stream: No such file or directory in /home3/tog22/all-sites/tp-finder/public/index.php on line 2
+[26-Mar-2020 19:54:02 America/Chicago] PHP Fatal error:  require(): Failed opening required 'vendor/autoload.php' (include_path='.:/opt/php71/lib/php') in /home3/tog22/all-sites/tp-finder/public/index.php on line 2
+[26-Mar-2020 19:54:02 America/Chicago] PHP Warning:  require(vendor/autoload.php): failed to open stream: No such file or directory in /home3/tog22/all-sites/tp-finder/public/index.php on line 2
+[26-Mar-2020 19:54:02 America/Chicago] PHP Warning:  require(vendor/autoload.php): failed to open stream: No such file or directory in /home3/tog22/all-sites/tp-finder/public/index.php on line 2
+[26-Mar-2020 19:54:02 America/Chicago] PHP Fatal error:  require(): Failed opening required 'vendor/autoload.php' (include_path='.:/opt/php71/lib/php') in /home3/tog22/all-sites/tp-finder/public/index.php on line 2
+[26-Mar-2020 19:54:03 America/Chicago] PHP Warning:  require(vendor/autoload.php): failed to open stream: No such file or directory in /home3/tog22/all-sites/tp-finder/public/index.php on line 2
+[26-Mar-2020 19:54:03 America/Chicago] PHP Warning:  require(vendor/autoload.php): failed to open stream: No such file or directory in /home3/tog22/all-sites/tp-finder/public/index.php on line 2
+[26-Mar-2020 19:54:03 America/Chicago] PHP Fatal error:  require(): Failed opening required 'vendor/autoload.php' (include_path='.:/opt/php71/lib/php') in /home3/tog22/all-sites/tp-finder/public/index.php on line 2
+[27-Mar-2020 04:45:30 America/Chicago] PHP Warning:  require(vendor/autoload.php): failed to open stream: No such file or directory in /home3/tog22/all-sites/tp-finder/public/index.php on line 2
+[27-Mar-2020 04:45:30 America/Chicago] PHP Warning:  require(vendor/autoload.php): failed to open stream: No such file or directory in /home3/tog22/all-sites/tp-finder/public/index.php on line 2
+[27-Mar-2020 04:45:30 America/Chicago] PHP Fatal error:  require(): Failed opening required 'vendor/autoload.php' (include_path='.:/opt/php71/lib/php') in /home3/tog22/all-sites/tp-finder/public/index.php on line 2
+[27-Mar-2020 04:49:06 America/Chicago] PHP Warning:  require(vendor/autoload.php): failed to open stream: No such file or directory in /home3/tog22/all-sites/tp-finder/public/index.php on line 2
+[27-Mar-2020 04:49:06 America/Chicago] PHP Warning:  require(vendor/autoload.php): failed to open stream: No such file or directory in /home3/tog22/all-sites/tp-finder/public/index.php on line 2
+[27-Mar-2020 04:49:06 America/Chicago] PHP Fatal error:  require(): Failed opening required 'vendor/autoload.php' (include_path='.:/opt/php71/lib/php') in /home3/tog22/all-sites/tp-finder/public/index.php on line 2

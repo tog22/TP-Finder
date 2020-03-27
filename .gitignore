@@ -1,0 +1,4 @@
+vendor/
+.idea/
+.well-known/
+server-files/

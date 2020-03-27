@@ -1,0 +1,21 @@
+###############
+# Use PHP 7.1 #
+###############
+
+AddHandler application/x-httpd-php71 .php
+<IfModule mod_suphp.c>
+    suPHP_ConfigPath /opt/php71/lib
+</IfModule>
+
+
+############
+# Rewrites #
+############
+
+# Use Slim 
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [QSA,L]
+
