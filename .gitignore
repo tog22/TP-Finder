@@ -1,4 +1,6 @@
-vendor/
-.idea/
+.DS_Store
 .well-known/
+.idea/
+vendor/
 server-files/
+public/error_log
