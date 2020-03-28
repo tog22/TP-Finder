@@ -5,13 +5,22 @@ use Slim\Http\Response;
 
 use Slim\Views\Twig;
 
-
+/****************
+*               *
+*  HOME PAGE    *
+*               *
+****************/
 
 $app->get('/', function (Request $request, Response $response) {
-    $response->getBody()->write("Welcome to the home page");
+    return $this->get(Twig::class)->render($response, 'home.twig');
+});
 
-    return $response;
-})->setName('root');
+
+/******************
+*                 *
+*  /hello/name    *
+*                 *
+******************/
 
 $app->get('/hello/{name}', function (Request $request, Response $response) {
     $name = $request->getAttribute('name');
