@@ -5,3 +5,4 @@
 vendor/
 server-files/
 public/error_log
+tmp/
