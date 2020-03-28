@@ -40,3 +40,25 @@ $container[Twig::class] = function (Container $container) {
 
     return $twig;
 };
+
+
+
+/*********************
+* ADD A LOGGER ENTRY *
+**********************/
+
+use Monolog\Handler\RotatingFileHandler;
+use Monolog\Logger;
+use Psr\Log\LoggerInterface;
+
+$container[LoggerInterface::class] = function (Container $container) {
+    $settings = $container->get('settings')['logger'];
+    $level = isset($settings['level']) ?: Logger::ERROR;
+    $logFile = $settings['file'];
+
+    $logger = new Logger($settings['name']);
+    $handler = new RotatingFileHandler($logFile, 0, $level, true, 0775);
+    $logger->pushHandler($handler);
+
+    return $logger;
+};

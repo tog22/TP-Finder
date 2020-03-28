@@ -34,3 +34,25 @@ $app->get('/time', function (Request $request, Response $response) {
 
     return $this->get(Twig::class)->render($response, 'time.twig', $viewData);
 });
+
+
+/*****************
+*                *
+*  /logger-test  *
+*                *
+*****************/
+
+use Psr\Log\LoggerInterface;
+use Slim\Container;
+
+$app->get('/logger-test', function (Request $request, Response $response) {
+    /** @var Container $this */
+    /** @var LoggerInterface $logger */
+
+    $logger = $this->get(LoggerInterface::class);
+    $logger->error('My error message!');
+
+    $response->getBody()->write("Success");
+
+    return $response;
+});

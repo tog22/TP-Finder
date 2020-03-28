@@ -36,4 +36,16 @@ $settings['db'] = [
     ],
 ];
 
+// Logger settings
+
+$settings['logger'] = [
+    'name' => 'app',
+    'file' => $settings['temp'] . '/logs/app.log',
+    'level' => \Monolog\Logger::ERROR,
+];
+
+
+
+// After all the above has been added to it, return $settings
+
 return $settings;
