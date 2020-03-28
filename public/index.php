@@ -7,7 +7,3 @@ $app = require __DIR__ . '/../config/bootstrap.php';
 
 // Start
 $app->run();
-
-?>
-
-Hello World
