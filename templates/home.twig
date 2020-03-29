@@ -8,17 +8,42 @@
 	    {% include 'includes/favicon.html' %}
 	    
 	    <base href="{{ base_url() }}/"/>
-	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	    
+	    {% include 'includes/head-includes.html' %}
 	    
 	</head>
 	<body>
 		
+		<nav class="navbar navbar-expand-md">
+			<a class="navbar-brand" href="/">
+				<span class="loo_roll">
+					🧻
+				</span>
+				Loo Roll Finder (aka AssWipr)
+			</a>
+			<button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
+				<span class="navbar-toggler-icon">
+				</span>
+			</button>
+			<!--
+			<div class="collapse navbar-collapse" id="main-navigation">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="/about">About</a>
+					</li>
+				</ul>
+			</div>
+			-->
+		</nav>
+
 		<h1>
-			🧻 Loo Roll Finder
+			
 		</h1>
 		<p>
 			Hello world
 		</p>
+		
+	    {% include 'includes/body-includes.html' %}
 		
 	</body>
 </html>

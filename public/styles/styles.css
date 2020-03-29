@@ -1,0 +1,66 @@
+/**************************
+***************************
+**                       **
+**   TABLE OF CONTENTS   **
+**                       **
+***************************
+**************************/
+ 
+
+/* - Chrome */
+/* -- Navbar */
+
+/* - To sort */
+ 
+/**************************/
+
+
+.navbar {
+	background-color: #1600ff;
+}
+
+.navbar a,
+.navbar a:hover,
+.navbar a:active,
+.navbar a:visited {
+	color: white;
+}
+
+.navbar-brand {
+	font-weight: bold;
+}
+
+.navbar-brand .loo_roll {
+	position: relative;
+	top: 2px;
+	margin-right: 3px;
+}
+
+.nav-link {
+  margin-right: 1em !important;
+}
+.nav-link:hover {
+  color: #000;
+}
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
+
+
+/**************************
+***************************
+**                       **
+**   THE STYLES BEGIN    **
+**                       **
+***************************
+**************************/
+
+
+/* - Chrome */
+
+/* -- Navbar */
+
+
+
+/* - To sort */
