@@ -17,7 +17,9 @@ $app->get('/', function (Request $request, Response $response) {
     
     $view_data = view_data_for_home($this);
     
-    return $this->get(Twig::class)->render($response, 'home.twig', $view_data);
+    $response->getBody()->write("Home page temporarily disabled, as I need to convert the Twig template to a PHP.");
+
+    return $response;
 });
 
 
@@ -32,21 +34,6 @@ $app->get('/hello/{name}', function (Request $request, Response $response) {
     $response->getBody()->write("Hello, $name");
 
     return $response;
-});
-
-
-/**********
-*         *
-*  /time  *
-*         *
-**********/
-
-$app->get('/time', function (Request $request, Response $response) {
-    $viewData = [
-        'now' => date('Y-m-d H:i:s')
-    ];
-
-    return $this->get(Twig::class)->render($response, 'time.twig', $viewData);
 });
 
 

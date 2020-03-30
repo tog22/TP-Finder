@@ -39,9 +39,18 @@ $container[PDO::class] = function (Container $container) {
 
 
 /****************
+* ADD PHP-VIEW *
+****************/
+
+use Slim\Views\PhpRenderer;
+
+
+
+/****************
 * ADD TWIG-VIEW *
 ****************/
 
+/*
 use Slim\Views\Twig;
 
 // Register Twig View helper
@@ -53,7 +62,7 @@ $container[Twig::class] = function (Container $container) {
         'cache' => $settings['twig']['cache_enabled'] ? $settings['twig']['cache_path'] : false
     ]);
 
-    /** @var Twig_Loader_Filesystem $loader */
+    // @var Twig_Loader_Filesystem $loader
     $loader = $twig->getLoader();
     $loader->addPath($settings['public'], 'public');
 
@@ -64,6 +73,7 @@ $container[Twig::class] = function (Container $container) {
 
     return $twig;
 };
+*/
 
 
 
