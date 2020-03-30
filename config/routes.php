@@ -12,7 +12,12 @@ use Slim\Views\Twig;
 ****************/
 
 $app->get('/', function (Request $request, Response $response) {
-    return $this->get(Twig::class)->render($response, 'home.twig');
+    
+    require '../controllers/home.php';
+    
+    $view_data = view_data_for_home($this);
+    
+    return $this->get(Twig::class)->render($response, 'home.twig', $view_data);
 });
 
 

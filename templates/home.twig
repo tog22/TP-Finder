@@ -45,16 +45,13 @@
 					Find available prices for a product:
 				</h1>
 				<ul class="interface_list">
+					{% for product_type in product_types %}
 					<li>
 						<a href="#">
-							🧻 &nbsp; Loo roll
+							{{ product_type }}
 						</a>
 					</li>
-					<li>
-						<a href="#">
-							🤧 &nbsp; Tissues
-						</a>
-					</li>
+					{% endfor %}
 				</ul>
 			</section>
 			
