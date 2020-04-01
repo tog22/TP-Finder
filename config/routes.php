@@ -1,31 +1,49 @@
 <?php
 
+/********************
+*                   *
+*   PACKAGES USED   *
+*                   *
+********************/
+
+// Core Slim request & response packages
+
 use Slim\Http\Request;
 use Slim\Http\Response;
 
-use Slim\Views\Twig;
+// PHP-View for templates
+
+use Slim\Views\PhpRenderer;
+
+//  MonoLog for logging
+
+use Psr\Log\LoggerInterface;
 
 /****************
 *               *
-*  HOME PAGE    *
+*   HOME PAGE   *
 *               *
 ****************/
 
 $app->get('/', function (Request $request, Response $response) {
     
-    require '../controllers/home.php';
-    
+    include '../controllers/home_c.php';
     $view_data = view_data_for_home($this);
     
-    $response->getBody()->write("Home page temporarily disabled, as I need to convert the Twig template to a PHP.");
+    $logger = $this->get(LoggerInterface::class);
+    $logger->error(print_r($view_data, true));
+    
+    $renderer = new PhpRenderer('../templates/');
+    return $renderer->render($response, "home_v.php", $view_data);
 
     return $response;
 });
 
 
+
 /******************
 *                 *
-*  /hello/name    *
+*   /hello/name   *
 *                 *
 ******************/
 
@@ -37,13 +55,13 @@ $app->get('/hello/{name}', function (Request $request, Response $response) {
 });
 
 
-/*****************
-*                *
-*  /logger-test  *
-*                *
-*****************/
 
-use Psr\Log\LoggerInterface;
+/*******************
+*                  *
+*   /logger-test   *
+*                  *
+*******************/
+
 use Slim\Container;
 
 $app->get('/logger-test', function (Request $request, Response $response) {

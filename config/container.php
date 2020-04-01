@@ -39,14 +39,6 @@ $container[PDO::class] = function (Container $container) {
 
 
 /****************
-* ADD PHP-VIEW *
-****************/
-
-use Slim\Views\PhpRenderer;
-
-
-
-/****************
 * ADD TWIG-VIEW *
 ****************/
 
@@ -96,3 +88,13 @@ $container[LoggerInterface::class] = function (Container $container) {
 
     return $logger;
 };
+
+
+/* Example of logging which works in the app:
+
+use Psr\Log\LoggerInterface;
+    
+$logger = $app->get(LoggerInterface::class);
+$logger->error(print_r($rows, true));
+
+*/
