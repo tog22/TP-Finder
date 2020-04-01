@@ -5,7 +5,7 @@ use Slim\Container;
 use Slim\Http\Request;
 use Slim\Http\Response;
 
-function view_data_for_home($app) {
+function data_for_home($app) {
 	
 	$view_data = array ();
 	
