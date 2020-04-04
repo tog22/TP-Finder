@@ -11,6 +11,9 @@
 use Slim\Http\Request;
 use Slim\Http\Response;
 
+// is this needed????
+use Slim\Container;
+
 // PHP-View for templates
 
 use Slim\Views\PhpRenderer;
@@ -69,8 +72,6 @@ $app->get('/prices/{product_type}', function (Request $request, Response $respon
 *   /logger-test   *
 *                  *
 *******************/
-
-use Slim\Container;
 
 $app->get('/logger-test', function (Request $request, Response $response) {
     /** @var Container $this */
