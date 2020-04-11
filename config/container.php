@@ -129,6 +129,13 @@ $container[LoggerInterface::class] = function (Container $container) {
 
     $logger = new Logger($settings['name']);
     $handler = new RotatingFileHandler($logFile, 0, $level, true, 0775);
+    $formatter = new Monolog\Formatter\LineFormatter(
+	    null, // Format of message in log, default [%datetime%] %channel%.%level_name%: %message% %context% %extra%\n
+	    null, // Datetime format
+	    true, // allowInlineLineBreaks option, default false
+	    true  // ignoreEmptyContextAndExtra option, default false
+	);
+	$handler->setFormatter($formatter);
     $logger->pushHandler($handler);
 
     return $logger;

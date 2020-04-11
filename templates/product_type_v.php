@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		
+		<?php
+		// Template prep at start of <head>
+		?>
 	    <title>
 	    	AssWipr
 	    </title>
-	    <?php include 'includes/favicon.html' ?>
+	    <!-- TO DO: title -->
 	    
-	    <base href="{{ base_url() }}/"/>
+	    <?php include 'includes/favicon.html' ?>
 	    
 	    <?php include 'includes/head-includes.html' ?>
 	    
@@ -42,52 +44,76 @@
 			
 			<section>
 				<h1>
-					Find available prices for a product:
-				</h1>
-				<ul class="interface_list">
-					<?php
-					foreach ($product_types as $product_type) {
-						?>
-						<li>
-							<a href="/prices/<?= $product_type['url_name'] ?>">
-								<?
-								if ($product_type['emoji']) {
-									print $product_type['emoji'].' &nbsp; ';
-								}
-								?>
-								<?= $product_type['name'] ?>
-							</a>
-						</li>
-						
-						<?
+					<?
+					if ($product_type['emoji']) {
+						print $product_type['emoji'].' &nbsp; ';
 					}
 					?>
-				</ul>
+					<?= $product_type['name'] ?>
+				</h1>
+				<p>
+					<?= $product_type['description'] ?>
+				</p>
 			</section>
 			
-			<section>
-				<h1>
-					Report availability of a product:
-				</h1>
-				<ul class="interface_list">
-					<?php
-					foreach ($product_types as $product_type) {
-						?>
-						<li>
-							<a href="/report/<?= $product_type['url_name'] ?>">
-								<?
-								if ($product_type['emoji']) {
-									print $product_type['emoji'].' &nbsp; ';
-								}
-								?>
-								<?= $product_type['name'] ?>
-							</a>
-						</li>
-						
+			<section class="table_list">
+				
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">
+								Best Price
+							</th>
+							<th scope="col">
+								Name
+							</th>
+							<th scope="col">
+								Brand
+							</th>
+							<th scope="col">
+								Description
+							</th>
+							<!--
+							<th scope="col">
+								Amount
+							</th>
+							<th scope="col">
+								Weight
+							</th>
+							-->
+						</tr>
+					</thead>
+					<tbody>
 						<?
-					}
-					?>
-				</ul>
+						foreach ($products as $product) {
+						?>
+						<tr>
+							<td>
+								<?= $product['min_price'] ?>
+							</td>
+							<td>
+								<?= $product['name'] ?>
+							</td>
+							<td>
+								brand
+							</td>
+							<td>
+								<?= $product['description'] ?>
+							</td>
+							<!--
+							<td>
+								amount
+							</td>
+							<td>
+								weight
+							</td>
+							-->
+						</tr>
+						<?
+						}
+						?>
+					</tbody>
+				</table>
 			</section>
 			
 		</main>

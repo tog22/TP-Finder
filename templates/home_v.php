@@ -7,8 +7,6 @@
 	    </title>
 	    <?php include 'includes/favicon.html' ?>
 	    
-	    <base href="{{ base_url() }}/"/>
-	    
 	    <?php include 'includes/head-includes.html' ?>
 	    
 	</head>

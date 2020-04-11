@@ -25,8 +25,8 @@ $settings['db'] = [
     'username' => 'tog22_low_sec',
     'database' => 'tog22_tp_odan',
     'password' => 'lowsecpw',
-    'charset' => 'utf8',
-    'collation' => 'utf8_unicode_ci',
+    'charset' => 'utf8mb4',
+    'collation' => 'utf8mb4_unicode_ci',
     /* The following flags are now set in $container['pdo']:
     'flags' => [
         PDO::ATTR_PERSISTENT => false,
