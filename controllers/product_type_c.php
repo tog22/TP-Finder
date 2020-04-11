@@ -28,7 +28,8 @@ function data_for_product_type($app, $which_type) {
     $stmt = null;
     $results = null;
     
-    $stmt = $pdo->query("SELECT * FROM products WHERE type_id LIKE '".$product_type['type_id']."'");
+    $stmt = $pdo->prepare("SELECT * FROM products WHERE type_id LIKE :type_id");
+    $stmt->execute(['type_id' => $product_type['type_id']]);
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
     // TO DO: work out what to do if there are none - the loop below will just return an empty array, which is not so bad
     
@@ -41,7 +42,8 @@ function data_for_product_type($app, $which_type) {
 	    
 	    // Get the minimum price
 	    
-	    $stmt2 = $pdo->query("SELECT MIN(price) FROM available_prices WHERE pid = ".$results[$x]['pid']);
+	    $stmt2 = $pdo->prepare("SELECT MIN(price) FROM available_prices WHERE pid = :pid");
+	    $stmt2->execute(['pid' => $results[$x]['pid']]);
 	    $min_price = $stmt2->fetchColumn();
 	    $view_data['products'][$x]['min_price'] = '$'.$min_price;
 	    
