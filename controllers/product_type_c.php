@@ -2,6 +2,7 @@
 	
 use Slim\Http\Request;
 use Slim\Http\Response;
+use Psr\Log\LoggerInterface;
 
 function data_for_product_type($app, $which_type) {
 	
@@ -30,7 +31,7 @@ function data_for_product_type($app, $which_type) {
     
     $stmt = $pdo->prepare("SELECT * FROM products WHERE type_id LIKE :type_id");
     $stmt->execute(['type_id' => $product_type['type_id']]);
-    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $results = $stmt->fetchAll(); // ->fetchAll() used because may be more than 1 row
     // TO DO: work out what to do if there are none - the loop below will just return an empty array, which is not so bad
     
     $view_data['products'] = array();
@@ -42,12 +43,17 @@ function data_for_product_type($app, $which_type) {
 	    
 	    // Get the minimum price
 	    
-	    $stmt2 = $pdo->prepare("SELECT MIN(price) FROM available_prices WHERE pid = :pid");
-	    $stmt2->execute(['pid' => $results[$x]['pid']]);
-	    $min_price = $stmt2->fetchColumn();
+	    $stmt_inner = $pdo->prepare("SELECT MIN(price) FROM available_prices WHERE pid = :pid");
+	    $stmt_inner->execute(['pid' => $results[$x]['pid']]);
+	    $min_price = $stmt_inner->fetchColumn();
 	    $view_data['products'][$x]['min_price'] = '$'.$min_price;
 	    
 	    // Get the brand name
+	    $stmt_inner = null;
+	    $stmt_inner = $pdo->prepare("SELECT * FROM brands WHERE brand_id = :brand_id");
+	    $stmt_inner->execute(['brand_id' => $results[$x]['brand_id']]);
+	    $brand_info = $stmt_inner->fetch(); // ->fetch() used because only 1 row expected
+	    $view_data['products'][$x]['brand_info'] = $brand_info;
 	    
     }
     

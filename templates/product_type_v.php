@@ -89,13 +89,16 @@
 						?>
 						<tr>
 							<td>
-								<?= $product['min_price'] ?>
+								<a href="/product/<?= $product['pid'] ?>">
+									<!-- TO DO: change URL to /prices/loo-roll/brand/product -->
+									<?= $product['min_price'] ?>
+								</a>
 							</td>
 							<td>
 								<?= $product['name'] ?>
 							</td>
 							<td>
-								brand
+								<?= $product['brand_info']['name'] ?>
 							</td>
 							<td>
 								<?= $product['description'] ?>

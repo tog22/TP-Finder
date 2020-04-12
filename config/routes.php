@@ -33,9 +33,6 @@ $app->get('/', function (Request $request, Response $response) {
     include '../controllers/home_c.php';
     $view_data = data_for_home($this);
     
-    $logger = $this->get(LoggerInterface::class);
-    $logger->debug(print_r($view_data,true));
-    
     /*
 	Example of logging:
 	
@@ -61,10 +58,6 @@ $app->get('/prices/{product_type}', function (Request $request, Response $respon
     
     include '../controllers/product_type_c.php';
     $view_data = data_for_product_type($this, $request->getAttribute('product_type'));
-    
-    
-	$logger = $this->get(LoggerInterface::class);
-    $logger->error(print_r($view_data, true));
     
     $renderer = new PhpRenderer('../templates/');
     return $renderer->render($response, "product_type_v.php", $view_data);
