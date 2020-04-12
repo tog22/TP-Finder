@@ -4,15 +4,15 @@
 		<?php
 		// Template prep at start of <head>
 		?>
-	    <title>
-	    	AssWipr
-	    </title>
-	    <!-- TO DO: title -->
-	    
-	    <?php include 'includes/favicon.html' ?>
-	    
-	    <?php include 'includes/head-includes.html' ?>
-	    
+		<title>
+			AssWipr
+		</title>
+		<!-- TO DO: title -->
+		
+		<?php include 'includes/favicon.html' ?>
+		
+		<?php include 'includes/head-includes.html' ?>
+		
 	</head>
 	<body>
 		
@@ -126,7 +126,7 @@
 		</footer>
 		
 		<!-- Scripts and suchlike -->
-	    <?php include  'includes/body-includes.html' ?>
+		<?php include  'includes/body-includes.html' ?>
 		
 	</body>
 </html>

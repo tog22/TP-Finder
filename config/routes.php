@@ -67,6 +67,25 @@ $app->get('/prices/{product_type}', function (Request $request, Response $respon
 
 
 
+/******************
+*                 *
+*   /product/id   *
+*                 *
+******************/
+
+$app->get('/product/{pid}', function (Request $request, Response $response) {
+    
+    include '../controllers/product_id_c.php';
+    $view_data = data_for_product_id($this, $request->getAttribute('pid'));
+    
+    $renderer = new PhpRenderer('../templates/');
+    return $renderer->render($response, "product_id_v.php", $view_data);
+
+    return $response;
+});
+
+
+
 /*******************
 *                  *
 *   /logger-test   *

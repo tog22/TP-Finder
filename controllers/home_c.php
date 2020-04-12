@@ -14,20 +14,20 @@ function data_for_home($app) {
 	
 	$query = $app->get(Connection::class)->newQuery();
 	$query = $query->select('*')->from('product_types');
-    $product_types = $query->execute()->fetchAll('assoc') ?: [];
-    $view_data['product_types'] = $product_types;
-    */
-    
-    // PDO version:
-    
-    
+	$product_types = $query->execute()->fetchAll('assoc') ?: [];
+	$view_data['product_types'] = $product_types;
+	*/
+	
+	// PDO version:
+	
+	
 	$pdo = $app->pdo;
-    
-    $stmt = $pdo->query('SELECT * FROM product_types');
-    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    $product_types = $results;
-    $view_data['product_types'] = $product_types;
-    
+	
+	$stmt = $pdo->query('SELECT * FROM product_types');
+	$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	$product_types = $results;
+	$view_data['product_types'] = $product_types;
+	
 	return $view_data;
 	
 }
