@@ -15,6 +15,8 @@
 /* - Common theme elements */
 /* -- Lists */
 /* --- Interface lists */
+/* --- Table lists */
+/* ---- Things within table lists (e.g. icons) */
 
 /* - Page types (with different themes) */
 /* -- Regular pages */
@@ -48,6 +50,12 @@ html {
 	/* Hopefully this works OK, I'm basing it on
 	   https://stackoverflow.com/questions/28678542/how-to-change-bootstraps-global-default-font-size
 	*/
+}
+
+/* -- Links */
+
+a:hover {
+	text-decoration: none;
 }
 
 /* -- Navbar */
@@ -91,6 +99,8 @@ main {
 	margin-bottom: 2rem;
 }
 
+
+
 /* - Common theme elements */
 
 /* -- Lists */
@@ -100,6 +110,22 @@ main {
 ul.interface_list {
 	font-weight: bold;
 	font-size: 1.111em;
+}
+
+/* --- Table lists */
+
+.table_list a:hover {
+	text-decoration: none;
+}
+
+/* ---- Things within table lists (e.g. icons) */
+
+.icon_s {
+	height: 17px;
+    vertical-align: baseline;
+    position: relative;
+    top: 2px;
+    padding-right: 3px;
 }
 
 /* - Page types (with different themes) */
