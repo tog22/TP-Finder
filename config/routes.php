@@ -86,6 +86,25 @@ $app->get('/product/{pid}', function (Request $request, Response $response) {
 
 
 
+/****************
+*               *
+*   /store/id   *
+*               *
+****************/
+
+$app->get('/store/{id}', function (Request $request, Response $response) {
+    
+    include '../controllers/store_id_c.php';
+    $view_data = data_for_store_id($this, $request->getAttribute('id'));
+    
+    $renderer = new PhpRenderer('../templates/');
+    return $renderer->render($response, "store_id_v.php", $view_data);
+
+    return $response;
+});
+
+
+
 /*******************
 *                  *
 *   /logger-test   *

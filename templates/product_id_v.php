@@ -44,7 +44,7 @@
 			
 			<section>
 				<h1>
-					<span style="font-weight: 600">
+					<span class="brand_s">
 						<?= $product_info['brand_info']['name'] ?>
 					</span>
 					<?= $product_info['name'] ?>
